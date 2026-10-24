@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventHub | Event Registration & Ticketing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">Event<span>Hub</span></a>
+    <nav>
+      <button class="nav-btn active" data-view="eventsView">Explore Events</button>
+      <button class="nav-btn" data-view="ticketsView" id="myTicketsNav">My Tickets</button>
+      <span id="userGreeting" class="greeting"></span>
+      <button id="logoutBtn" class="button button-outline hidden">Log out</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">DISCOVER • BOOK • EXPERIENCE</p>
+        <h1>Find your next<br><span>great experience.</span></h1>
+        <p class="hero-text">Explore campus events, check venues and book your ticket in a few clicks.</p>
+      </div>
+      <div class="hero-badge"><span>✦</span><strong>Make it<br>memorable</strong></div>
+    </section>
+
+    <div id="message" class="message hidden" role="status"></div>
+
+    <section id="authPanel" class="auth-panel">
+      <div class="auth-copy">
+        <p class="eyebrow">WELCOME TO EVENTHUB</p>
+        <h2>Join the event community</h2>
+        <p>Create an account or log in to book tickets and manage your bookings.</p>
+      </div>
+      <div class="auth-forms">
+        <form id="loginForm" class="auth-form">
+          <h3>Log in</h3>
+          <label>Email<input type="email" name="email" required placeholder="you@example.com"></label>
+          <label>Password<input type="password" name="password" required minlength="6" placeholder="At least 6 characters"></label>
+          <button class="button button-primary" type="submit">Log in</button>
+          <p class="form-note">New here? Create an account on the right.</p>
+        </form>
+        <form id="registerForm" class="auth-form">
+          <h3>Create account</h3>
+          <label>Full name<input name="name" required minlength="2" placeholder="Your name"></label>
+          <label>Email<input type="email" name="email" required placeholder="you@example.com"></label>
+          <label>Password<input type="password" name="password" required minlength="6" placeholder="At least 6 characters"></label>
+          <button class="button button-dark" type="submit">Create account</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="eventsView" class="content-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">WHAT'S HAPPENING</p><h2>Upcoming events</h2></div>
+        <input id="searchInput" class="search" type="search" placeholder="Search events or venues...">
+      </div>
+      <div id="eventsGrid" class="events-grid"><p class="muted">Loading events...</p></div>
+    </section>
+
+    <section id="ticketsView" class="content-section hidden">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR BOOKINGS</p><h2>My tickets</h2></div>
+      </div>
+      <div id="ticketsList" class="tickets-list"></div>
+    </section>
+  </main>
+
+  <footer><span class="brand">Event<span>Hub</span></span><p>Find events. Book tickets. Keep the memories.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
